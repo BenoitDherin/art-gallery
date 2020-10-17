@@ -74,6 +74,9 @@
           &:nth-of-type(4) {
             transition-delay: 1s;
           }
+          &:nth-of-type(5) {
+            transition-delay: 1.1s;
+          }
       }
     }
     .menu-btn:checked ~ .menu-icon {
