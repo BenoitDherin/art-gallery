@@ -2,6 +2,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 const path = require(`path`)
 
 const { galleryPathPrefix } = require(`./src/constants`)
+const { doodlesPathPrefix } = require(`./src/constants`)
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === 'build-html') {
@@ -24,6 +25,14 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const fileNode = getNode(node.parent)
     if (fileNode.relativePath.startsWith("static/images/gallery")) {
       const slug = createFilePath({ node, getNode, basePath: `pages` }).replace(`/${galleryPathPrefix}`, '')
+      createNodeField({
+        node,
+        name: `slug`,
+        value: slug,
+      })
+    }
+    if (fileNode.relativePath.startsWith("static/images/doodles")) {
+      const slug = createFilePath({ node, getNode, basePath: `pages` }).replace(`/${doodlesPathPrefix}`, '')
       createNodeField({
         node,
         name: `slug`,

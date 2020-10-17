@@ -34,6 +34,7 @@ function Header() {
       <ul className="nav-links">
         <Navlink to="/" onClick={() => setChecked(!checked)}>Home</Navlink>
         <Navlink to="/gallery" onClick={() => setChecked(!checked)}>Gallery</Navlink>
+        <Navlink to="/doodles" onClick={() => setChecked(!checked)}>Doodles</Navlink>
         <Navlink to="/about" onClick={() => setChecked(!checked)}>About</Navlink>
         <Navlink to="/contact" onClick={() => setChecked(!checked)}>Contact</Navlink>
       </ul>
